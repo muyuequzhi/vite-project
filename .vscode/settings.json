@@ -1,0 +1,12 @@
+{
+  "editor.detectIndentation": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // 语言默认格式化规则
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true
+}
