@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from '@/router/index'
+// 引入阿里云字体图标css
+import '@/assets/iconfont/iconfont.js'
 // 引入 createPinia 函数
 import { createPinia } from 'pinia'
 import piniaPersist from 'pinia-plugin-persist'

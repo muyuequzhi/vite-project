@@ -179,6 +179,7 @@ export { constantRoutes, asyncRoutes }
 //RouteMeta接口来键入meta字段
 declare module 'vue-router' {
   interface _RouteRecordBase {
+    id?: number | string
     icon?: string
   }
   interface RouteMeta {
