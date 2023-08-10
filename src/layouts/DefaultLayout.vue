@@ -21,6 +21,6 @@ const userStore = useUserStore()
     </el-container>
   </div>
 </template>
-<style scoped>
-@import './layout.css';
+<style scoped lang="scss">
+@import './layout.scss';
 </style>
