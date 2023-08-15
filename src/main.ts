@@ -4,6 +4,8 @@ import App from './App.vue'
 import router from '@/router/index'
 // 引入阿里云字体图标css
 import '@/assets/iconfont/iconfont.js'
+// 引入echarts
+import echarts from '@/utils/echarts'
 // 引入 createPinia 函数
 import { createPinia } from 'pinia'
 import piniaPersist from 'pinia-plugin-persist'
@@ -14,6 +16,8 @@ import '@/mock/index.js'
 const pinia = createPinia()
 pinia.use(piniaPersist)
 const app = createApp(App)
+app.config.globalProperties.$echarts = echarts
+
 app.use(pinia)
 app.use(router)
 app.mount('#app')

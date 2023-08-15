@@ -3,6 +3,6 @@
   "semi": false,
   "trailingComma": "all",
   "jsxSingleQuote": false,
-  "bracketSameLine": false,
+  "bracketSameLine": true,
   "bracketSpacing": true
 }
