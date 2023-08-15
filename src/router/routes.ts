@@ -11,19 +11,25 @@ const constantRoutes: Array<RouteRecordRaw> = [
     meta: { roles: [] },
     children: [],
   },
-  {
-    path: '/404',
-    name: '404',
-    component: () => import('@/pages/404/index.vue'),
-    meta: { roles: [] },
-    children: [],
-  },
+  // {
+  //   path: '/404',
+  //   name: '404',
+  //   component: () => import('@/pages/404/index.vue'),
+  //   meta: { roles: [] },
+  //   children: [],
+  // },
   {
     path: '/403',
     name: '403',
     component: () => import('@/pages/403/index.vue'),
     meta: { roles: [] },
     children: [],
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: '',
+    component: () => import('@/pages/404/index.vue'),
+    // redirect: '/404',
   },
 ]
 

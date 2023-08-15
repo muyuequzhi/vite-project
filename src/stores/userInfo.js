@@ -30,7 +30,6 @@ export const useUserStore = defineStore('userInfo', {
       // 路由后端给出时，重新构建路由
     },
     generateRoutes(roles) {
-      const pathMatch = { path: '/:pathMatch(.*)*', name: '', redirect: '/404' }
       //accessedRoutes:筛选出的动态路由
       const accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
       //将accessedRoutes和默认路由constantRoutes拼接得到完整可访问路由
@@ -41,7 +40,7 @@ export const useUserStore = defineStore('userInfo', {
         router.addRoute(route)
       })
       // 最后添加捕获所有路由，跳转404
-      router.addRoute(pathMatch)
+      // router.addRoute({ path: '/:pathMatch(.*)*', name: '', redirect: '/404' })
       console.log('router2>>>>', router.getRoutes())
     },
   },

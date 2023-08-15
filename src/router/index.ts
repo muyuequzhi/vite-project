@@ -32,7 +32,11 @@ router.beforeEach((to, from) => {
           userStore.generateRoutes(userStore.roles)
           // 避免重复添加
           registerRouteFresh = false
-          return { ...to, replace: true }
+          if (to.redirectedFrom?.path) {
+            return { ...to.redirectedFrom, replace: true }
+          } else {
+            return { ...to, replace: true }
+          }
         } else {
           return true
         }
