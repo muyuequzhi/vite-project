@@ -8,5 +8,6 @@ Mock.mock('/getData', 'get', {
   data: {
     username: 'root',
     roles: ['admin'],
+    permission: ['sys:add'],
   },
 })

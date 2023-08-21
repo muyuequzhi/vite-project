@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, Directive } from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from '@/router/index'
@@ -12,12 +12,18 @@ import piniaPersist from 'pinia-plugin-persist'
 import axios from '@/request/request'
 // 全局引入mock,仅在开发环境使用，打包时注释
 import '@/mock/index.js'
+import * as directives from '@/directives/index.js'
 // 创建 pinia 实例（根 store）
 const pinia = createPinia()
 pinia.use(piniaPersist)
 const app = createApp(App)
 app.config.globalProperties.$echarts = echarts
-
+// 注册指令
+Object.keys(directives).forEach((key) => {
+  //Object.keys() 返回一个数组，值是所有可遍历属性的key名
+  app.directive(key, (directives as { [key: string]: Directive })[key])
+  //key是自定义指令名字；后面应该是自定义指令的值，值类型是string
+})
 app.use(pinia)
 app.use(router)
 app.mount('#app')

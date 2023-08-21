@@ -21,12 +21,14 @@ export const useUserStore = defineStore('userInfo', {
       username: '',
       roles: [],
       routes: [],
+      permission: [],
     }
   },
   actions: {
     registerUser(data) {
       this.username = data.username || ''
       this.roles = data.roles
+      this.permission = data.permission
       // 路由后端给出时，重新构建路由
     },
     generateRoutes(roles) {
