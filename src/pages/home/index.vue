@@ -7,9 +7,19 @@
       <LineChart :option="options" width="100%" height="200px" />
     </div>
   </div>
+  <!-- 按钮 -->
+  <div>
+    <el-button>Default</el-button>
+    <el-button v-permission="['sys:add']">Default</el-button>
+    <el-button v-permission="['sys:delete']">wuwu</el-button>
+    <el-button v-longpress="longpress">longpress</el-button>
+    <el-button v-throttle="{ fn: throttle, event: 'click' }">throttle</el-button>
+    <el-button v-debounce="{ fn: debounce, event: 'click' }">debounce</el-button>
+  </div>
 </template>
 <script setup lang="ts">
 import { onMounted, getCurrentInstance, ref } from 'vue'
+import { ElButton } from 'element-plus'
 import MyChart from '@/components/MyChart/base.vue'
 import LineChart from '@/components/MyChart/LineChart.vue'
 
@@ -78,6 +88,16 @@ onMounted(async () => {
     myecharts.resize()
   }
 })
+
+const longpress = () => {
+  console.log('长按。。。。。。。。')
+}
+const throttle = () => {
+  console.log('hhkhhjhjhjhjhjhj')
+}
+const debounce = () => {
+  console.log(22222)
+}
 </script>
 <style scoped>
 @import url(./home.scss);
