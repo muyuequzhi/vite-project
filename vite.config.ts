@@ -31,5 +31,6 @@ export default defineConfig({
     rollupOptions: {
       // https://rollupjs.org/configuration-options/
     },
+    sourcemap: 'hidden',
   },
 })
