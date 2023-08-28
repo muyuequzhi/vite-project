@@ -19,8 +19,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"] //格式一定要写对符号*不能少不然找不到@或者没有代码提示
+      "@": ["src"],
+      "@/*": ["src/*"] //格式一定要写对符号*不能少不然找不到@或者没有代码提示
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

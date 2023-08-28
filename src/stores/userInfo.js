@@ -45,6 +45,13 @@ export const useUserStore = defineStore('userInfo', {
       // router.addRoute({ path: '/:pathMatch(.*)*', name: '', redirect: '/404' })
       console.log('router2>>>>', router.getRoutes())
     },
+    logout() {
+      this.username = ''
+      this.roles = []
+      this.routes = []
+      this.permission = []
+      router.replace({ path: '/login' })
+    },
   },
 })
 

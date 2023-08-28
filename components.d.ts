@@ -19,7 +19,6 @@ declare module 'vue' {
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
-    ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     LineChart: typeof import('./src/components/MyChart/LineChart.vue')['default']
@@ -27,5 +26,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SideMenu: typeof import('./src/components/SideMenu.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
+    TopMenu: typeof import('./src/components/TopMenu/TopMenu.vue')['default']
   }
 }
