@@ -11,7 +11,7 @@ import { createPinia } from 'pinia'
 import piniaPersist from 'pinia-plugin-persist'
 import axios from '@/request/request'
 // 全局引入mock,仅在开发环境使用，打包时注释
-import '@/mock/index.js'
+// import '@/mock/index.js'
 import * as directives from '@/directives/index.js'
 // 创建 pinia 实例（根 store）
 const pinia = createPinia()

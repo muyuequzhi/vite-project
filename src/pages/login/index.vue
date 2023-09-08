@@ -2,8 +2,8 @@
 import { useRouter } from 'vue-router'
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
-// import { getUserInfo } from '@/request/api'
-import { getUserInfo } from '@/mock/api'
+import { getUserInfo } from '@/request/api'
+// import { getUserInfo } from '@/mock/api'
 import { useUserStore } from '@/stores/userInfo.js'
 
 // onBeforeMount(() => {
