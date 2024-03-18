@@ -11,9 +11,13 @@ import echarts from '@/utils/echarts'
 import { createPinia } from 'pinia'
 import piniaPersist from 'pinia-plugin-persist'
 import axios from '@/request/request'
-// 全局引入mock,仅在开发环境使用，打包时注释
-// import '@/mock/index.js'
+// 引入mock
+import { setupProdMockServer } from '@/mock/mockProdServer'
 import * as directives from '@/directives/index.js'
+if (import.meta.env.MODE === 'development') {
+  //dev环境开启mock
+  setupProdMockServer()
+}
 // 创建 pinia 实例（根 store）
 const pinia = createPinia()
 pinia.use(piniaPersist)
