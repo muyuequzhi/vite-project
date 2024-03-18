@@ -25,5 +25,12 @@ module.exports = {
     'vue/multi-word-component-names': 0,
     'no-unused-vars': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-this-alias': [
+      'error',
+      {
+        allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
+        allowedNames: ['self', 'context'],
+      },
+    ],
   },
 }

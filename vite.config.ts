@@ -52,4 +52,12 @@ export default defineConfig({
     },
     sourcemap: 'hidden',
   },
+  server: {
+    port: 5173,
+    open: true, // 启动时是否自动打开
+    '/api': {
+      target: 'http://10.240.90.35:1234/',
+      changeOrigin: true,
+    },
+  },
 })
