@@ -16,12 +16,14 @@
     <el-button v-throttle="{ fn: throttle, event: 'click' }">throttle</el-button>
     <el-button v-debounce="{ fn: debounce, event: 'click' }">debounce</el-button>
   </div>
+  <FullEditor />
 </template>
 <script setup lang="ts">
 import { onMounted, getCurrentInstance, ref } from 'vue'
 import { ElButton } from 'element-plus'
 import MyChart from '@/components/MyChart/base.vue'
 import LineChart from '@/components/MyChart/LineChart.vue'
+import FullEditor from '@/components/FullEditor/index.vue'
 
 import { EChartsOption } from 'echarts'
 const options: EChartsOption = {
