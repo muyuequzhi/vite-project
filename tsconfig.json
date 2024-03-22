@@ -20,6 +20,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noExplicitAny": true,
     "baseUrl": ".",
     "paths": {
       "@": ["src"],

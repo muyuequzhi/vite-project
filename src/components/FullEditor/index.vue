@@ -14,7 +14,7 @@ export default {
     const valueHtml = ref('')
 
     // 标题列表
-    const headers = ref([])
+    const headers = ref<any[]>([])
 
     // 模拟 ajax 异步获取内容
     onMounted(() => {
@@ -35,16 +35,16 @@ export default {
       editor.destroy()
     })
 
-    const handleCreated = (editor) => {
+    const handleCreated = (editor: any) => {
       editorRef.value = editor // 记录 editor 实例，重要！
       //   console.log(editor.getAllMenuKeys())
     }
 
-    const handleChanged = (editor) => {
+    const handleChanged = (editor: any) => {
       headers.value = editor.getElemsByTypePrefix('header')
     }
 
-    const handleScroll = (event) => {
+    const handleScroll = (event: any) => {
       if (event.target.tagName !== 'LI') return
       event.preventDefault()
       const id = event.target.id
@@ -83,7 +83,9 @@ export default {
     <!-- 标题目录 -->
     <div style="width: 200px; background-color: #f1f1f1">
       <ul id="header-container" @mousedown="handleScroll">
-        <li v-for="item in headers" :key="item.id" :id="item.id" :type="item.type">{{ item.children && item.children.length ? item.children[0].text : '' }}</li>
+        <li v-for="item in headers" :key="item.id" :id="item.id" :type="item.type">
+          {{ item.children && item.children.length ? item.children[0].text : '' }}
+        </li>
       </ul>
     </div>
   </div>

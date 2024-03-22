@@ -28,3 +28,7 @@ lint-staged + husky
 ## IDE设置建议
 
 - VS Code + Volar (禁用Vtur) + TypeScript Vue Plugin(Volar)。
+
+## 兼容性
+
+谷歌86.0.4214.3及以上；不支持IE；
