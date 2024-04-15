@@ -8,7 +8,6 @@ import BaseInput from '@/components/BaseInput/index.vue'
 
 import { getTableData } from './data'
 
-const input = ref('')
 const tableData = ref([])
 const fullScreenVal = ref(true)
 getTableData().then((res) => {
