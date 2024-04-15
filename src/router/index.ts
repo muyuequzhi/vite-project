@@ -3,7 +3,7 @@ import { constantRoutes } from './routes'
 import { useUserStore } from '@/stores/userInfo.js'
 import { hasPermission } from '@/router/permission'
 // 定义路由白名单
-const whiteList: Array<string> = ['/login', '/404']
+const whiteList: Array<string> = ['/login', '/404', '/test']
 // 定义标识，记录路由是否添加
 let registerRouteFresh = true
 // 创建路由实例
