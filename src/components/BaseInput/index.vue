@@ -5,6 +5,7 @@ const props = defineProps({
   val: { type: String },
 })
 
+// eslint-disable-next-line vue/no-setup-props-destructure
 const inputVal = ref(props.val)
 </script>
 

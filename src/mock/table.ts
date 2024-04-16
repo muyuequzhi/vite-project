@@ -22,7 +22,7 @@ export default [
   {
     url: '/getTableData',
     method: 'get',
-    timeout: 1000,
+    timeout: 500,
     response: () => {
       return {
         code: 200,

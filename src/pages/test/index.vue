@@ -1,34 +1,22 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import LineChart from '@/components/MyChart/LineChart.vue'
-import { EChartsOption } from 'echarts'
 import CardWrapper from '@/components/CardWrapper/index.vue'
 import BaseTable from '@/components/BaseTable/index.vue'
-import BaseInput from '@/components/BaseInput/index.vue'
+import BasicForm from './BasicForm.vue'
 
 import { getTableData } from './data'
 
 const tableData = ref([])
-const fullScreenVal = ref(true)
-getTableData().then((res) => {
-  tableData.value = res.data.data
-  fullScreenVal.value = false
-})
-const options: EChartsOption = {
-  xAxis: {
-    type: 'category',
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [
-    {
-      data: [150, 230, 224, 218, 135, 147, 260],
-      type: 'line',
-    },
-  ],
+const fullScreenVal = ref(false)
+function setTableData(param) {
+  console.log(param)
+  fullScreenVal.value = true
+  getTableData().then((res) => {
+    tableData.value = res.data.data
+    fullScreenVal.value = false
+  })
 }
+
 const tableAttr = [
   { prop: 'id', label: 'id', width: '180', fixed: true },
   { prop: 'col1', label: 'col1', width: '180' },
@@ -44,55 +32,15 @@ const tableAttr = [
 <template>
   <div class="item-box" v-loading="fullScreenVal">
     <div>
-      <div class="form-box">
-        <el-row :gutter="10">
-          <el-col :span="8">
-            <BaseInput label="输入框1"></BaseInput>
-          </el-col>
-          <el-col :span="8">
-            <BaseInput label="输入框2"></BaseInput>
-          </el-col>
-          <el-col :span="8">
-            <BaseInput label="输入框3"></BaseInput>
-          </el-col>
-        </el-row>
-        <el-row :gutter="10">
-          <el-col :span="8">
-            <BaseInput label="输入框4"></BaseInput>
-          </el-col>
-          <el-col :span="8">
-            <BaseInput label="输入框5"></BaseInput>
-          </el-col>
-          <el-col :span="8">
-            <BaseInput label="输入框6"></BaseInput>
-          </el-col>
-        </el-row>
-      </div>
-
-      <CardWrapper title="666">
-        <el-row>
-          <el-col :span="8">
-            <LineChart :option="options" width="100%" height="350px" />
-          </el-col>
-
-          <el-col :span="16">
-            <BaseTable :tableAttr="tableAttr" :tableData="tableData"></BaseTable>
-          </el-col>
-        </el-row>
+      <BasicForm @setParTableData="setTableData"></BasicForm>
+      <CardWrapper title="测试数据">
+        <BaseTable :tableAttr="tableAttr" :tableData="tableData"></BaseTable>
       </CardWrapper>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.form-box {
-  padding: 16px 10px;
-
-  .el-row {
-    margin-bottom: 16px;
-  }
-}
-
 .item-box {
   width: 100%;
 
@@ -103,5 +51,10 @@ const tableAttr = [
     margin: 10px 0;
   }
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
-./data.ts
